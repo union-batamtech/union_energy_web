@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <menuitem id="menu_union_energy_faq" name="FAQ"
+        parent="website.menu_website"
+        action="act_open_faq_view"
+        sequence="10"/>
+
+</odoo>
