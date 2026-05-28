@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Deactivate all Odoo footer templates (Contact, Default, Mega, etc.). -->
+    <record id="website.footer_custom" model="ir.ui.view">
+        <field name="active" eval="False"/>
+    </record>
+    <record id="website.template_footer_descriptive" model="ir.ui.view">
+        <field name="active" eval="False"/>
+    </record>
+    <record id="website.template_footer_centered" model="ir.ui.view">
+        <field name="active" eval="False"/>
+    </record>
+    <record id="website.template_footer_links" model="ir.ui.view">
+        <field name="active" eval="False"/>
+    </record>
+    <record id="website.template_footer_minimalist" model="ir.ui.view">
+        <field name="active" eval="False"/>
+    </record>
+    <record id="website.template_footer_contact" model="ir.ui.view">
+        <field name="active" eval="False"/>
+    </record>
+    <record id="website.template_footer_call_to_action" model="ir.ui.view">
+        <field name="active" eval="False"/>
+    </record>
+    <record id="website.template_footer_headline" model="ir.ui.view">
+        <field name="active" eval="False"/>
+    </record>
+    <record id="website.template_footer_mega" model="ir.ui.view">
+        <field name="active" eval="False"/>
+    </record>
+    <record id="website.template_footer_mega_columns" model="ir.ui.view">
+        <field name="active" eval="False"/>
+    </record>
+    <record id="website.template_footer_mega_links" model="ir.ui.view">
+        <field name="active" eval="False"/>
+    </record>
+    <record id="website.template_footer_mega_cards" model="ir.ui.view">
+        <field name="active" eval="False"/>
+    </record>
+    <record id="website.template_footer_slideout" model="ir.ui.view">
+        <field name="active" eval="False"/>
+    </record>
+
+    <function model="ir.ui.view" name="_website_landing_faq_activate_union_footer"/>
+
+</odoo>

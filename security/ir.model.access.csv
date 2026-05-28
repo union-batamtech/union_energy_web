@@ -1,5 +1,7 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_union_energy_faq_back_office_admin,name_union_energy_faq_back_office_admin,model_union_energy_faq,union_energy_web.group_union_energy_faq_manager,1,1,1,1
-access_union_energy_faq_back_office_manager,name_union_energy_faq_back_office_manager,model_union_energy_faq,union_energy_web.group_union_energy_faq_manager,1,1,1,0
-access_union_energy_faq_back_office_user,name_union_energy_faq_back_office_user,model_union_energy_faq,union_energy_web.group_union_energy_faq_user,1,1,0,0
-access_union_energy_faq_back_office_public,name_union_energy_faq_back_office_public,model_union_energy_faq,union_energy_web.group_union_energy_faq_user,1,0,0,0
+access_website_landing_section_user,website.landing.section.user,model_website_landing_section,base.group_user,1,1,1,1
+access_website_faq_category_user,website.faq.category.user,model_website_faq_category,base.group_user,1,1,1,1
+access_website_faq_item_user,website.faq.item.user,model_website_faq_item,base.group_user,1,1,1,1
+access_website_landing_section_public,website.landing.section.public,model_website_landing_section,,1,0,0,0
+access_website_faq_category_public,website.faq.category.public,model_website_faq_category,,1,0,0,0
+access_website_faq_item_public,website.faq.item.public,model_website_faq_item,,1,0,0,0

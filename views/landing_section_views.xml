@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_website_landing_section_list" model="ir.ui.view">
+        <field name="name">website.landing.section.list</field>
+        <field name="model">website.landing.section</field>
+        <field name="arch" type="xml">
+            <list string="Landing Sections" editable="bottom">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="section_type"/>
+                <field name="title"/>
+                <field name="website_published"/>
+                <field name="active" column_invisible="True"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_website_landing_section_form" model="ir.ui.view">
+        <field name="name">website.landing.section.form</field>
+        <field name="model">website.landing.section</field>
+        <field name="arch" type="xml">
+            <form string="Landing Section">
+                <sheet>
+                    <div class="oe_button_box" name="button_box"/>
+                    <widget name="web_ribbon" title="Tidak dipublikasikan" bg_color="text-bg-danger" invisible="website_published"/>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="section_type"/>
+                            <field name="sequence"/>
+                            <field name="website_published"/>
+                            <field name="active"/>
+                        </group>
+                        <group>
+                            <field name="image" widget="image" class="oe_avatar"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="title" placeholder="Judul utama section"/>
+                        <field name="subtitle" placeholder="Subjudul atau tagline"/>
+                    </group>
+                    <notebook>
+                        <page string="Konten" name="content">
+                            <field name="body_html" widget="html"/>
+                        </page>
+                        <page string="Tombol" name="button">
+                            <group>
+                                <field name="button_text"/>
+                                <field name="button_url"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_website_landing_section" model="ir.actions.act_window">
+        <field name="name">Landing Page</field>
+        <field name="res_model">website.landing.section</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Buat section pertama untuk landing page Anda
+            </p>
+            <p>
+                Atur urutan section dengan drag handle. Halaman publik tersedia di
+                <strong>/landing</strong>.
+            </p>
+        </field>
+    </record>
+
+</odoo>

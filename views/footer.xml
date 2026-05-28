@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="footer_social_icon" name="Footer Social Icon">
+        <a t-att-href="href"
+            class="o_wlf_footer__social-link"
+            t-att-title="label"
+            t-att-aria-label="label"
+            target="_blank"
+            rel="noopener noreferrer">
+            <img t-att-src="icon_src"
+                t-att-alt="label"
+                class="o_wlf_footer__social-icon"
+                loading="lazy"
+                width="22"
+                height="22"/>
+        </a>
+    </template>
+
+    <template id="union_footer_content" name="Union Footer Content">
+        <div class="container py-5">
+            <div class="row g-4 g-lg-5 align-items-start">
+                <div class="col-md-4 col-lg-3">
+                    <h6 class="o_wlf_footer__heading">Loyalty &amp; Rewards</h6>
+                    <ul class="o_wlf_footer__links list-unstyled mb-4">
+                        <li>
+                            <a href="/solar-power/latest-promotions">Latest Promotions</a>
+                        </li>
+                    </ul>
+                    <h6 class="o_wlf_footer__heading">Careers</h6>
+                    <ul class="o_wlf_footer__links list-unstyled mb-0">
+                        <li>
+                            <a href="/corporate">Jobs openings</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-3 col-lg-2">
+                    <h6 class="o_wlf_footer__heading">Resources</h6>
+                    <ul class="o_wlf_footer__links list-unstyled mb-0">
+                        <li>
+                            <a href="/electricity/faqs">FAQs</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-5 col-lg-7">
+                    <div class="o_wlf_footer__brand text-md-end">
+                        <a href="/" class="o_wlf_footer__logo-link" aria-label="Union Energy home">
+                            <img src="/website_landing_faq/static/src/img/footer/union-logo.webp"
+                                alt="Union Energy"
+                                class="o_wlf_footer__logo"
+                                loading="lazy"
+                                width="220"
+                                height="80"/>
+                        </a>
+                        <div class="o_wlf_footer__badges" role="list" aria-label="Certifications">
+                            <img src="/website_landing_faq/static/src/img/footer/bca-registered-contractor.webp"
+                                alt="BCA Registered Contractor"
+                                class="o_wlf_footer__badge"
+                                loading="lazy"
+                                width="125"
+                                height="149"
+                                role="listitem"/>
+                            <img src="/website_landing_faq/static/src/img/footer/iso-certification.webp"
+                                alt="ISO 9001, ISO 14001, ISO 45001 Certified"
+                                class="o_wlf_footer__badge"
+                                loading="lazy"
+                                width="210"
+                                height="98"
+                                role="listitem"/>
+                            <img src="/website_landing_faq/static/src/img/footer/bizsafe-star.webp"
+                                alt="bizSAFE STAR"
+                                class="o_wlf_footer__badge"
+                                loading="lazy"
+                                width="173"
+                                height="122"
+                                role="listitem"/>
+                        </div>
+                        <div class="o_wlf_footer__social" aria-label="Social media">
+                            <t t-call="website_landing_faq.footer_social_icon">
+                                <t t-set="href" t-value="'https://wa.me/'"/>
+                                <t t-set="label" t-value="'WhatsApp'"/>
+                                <t t-set="icon_src" t-value="'/website_landing_faq/static/src/svg/social/whatsapp.svg'"/>
+                            </t>
+                            <t t-call="website_landing_faq.footer_social_icon">
+                                <t t-set="href" t-value="'mailto:info@unionenergy.com'"/>
+                                <t t-set="label" t-value="'Email'"/>
+                                <t t-set="icon_src" t-value="'/website_landing_faq/static/src/svg/social/email.svg'"/>
+                            </t>
+                            <t t-call="website_landing_faq.footer_social_icon">
+                                <t t-set="href" t-value="'https://www.tiktok.com/'"/>
+                                <t t-set="label" t-value="'TikTok'"/>
+                                <t t-set="icon_src" t-value="'/website_landing_faq/static/src/svg/social/tiktok.svg'"/>
+                            </t>
+                            <t t-call="website_landing_faq.footer_social_icon">
+                                <t t-set="href" t-value="'https://www.facebook.com/'"/>
+                                <t t-set="label" t-value="'Facebook'"/>
+                                <t t-set="icon_src" t-value="'/website_landing_faq/static/src/svg/social/facebook.svg'"/>
+                            </t>
+                            <t t-call="website_landing_faq.footer_social_icon">
+                                <t t-set="href" t-value="'https://www.linkedin.com/'"/>
+                                <t t-set="label" t-value="'LinkedIn'"/>
+                                <t t-set="icon_src" t-value="'/website_landing_faq/static/src/svg/social/linkedin.svg'"/>
+                            </t>
+                            <t t-call="website_landing_faq.footer_social_icon">
+                                <t t-set="href" t-value="'https://www.instagram.com/'"/>
+                                <t t-set="label" t-value="'Instagram'"/>
+                                <t t-set="icon_src" t-value="'/website_landing_faq/static/src/svg/social/instagram.svg'"/>
+                            </t>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="o_wlf_footer__bottom">
+            <div class="container py-3">
+                <p class="o_wlf_footer__copyright mb-0">© 2026 All Rights Reserved.</p>
+            </div>
+        </div>
+    </template>
+
+    <!-- Applied on every page using website.layout (landing, FAQ, website.page, shop, etc.). -->
+    <template id="union_footer" inherit_id="website.layout" name="Union Footer" active="True" priority="200">
+        <xpath expr="//footer[@id='bottom']" position="attributes">
+            <attribute name="class" remove="bg-light" add="o_wlf_footer_site" separator=" "/>
+        </xpath>
+        <xpath expr="//div[@id='footer']" position="replace">
+            <div id="footer" class="o_wlf_footer" t-ignore="true" t-if="not no_footer">
+                <t t-call="website_landing_faq.union_footer_content"/>
+            </div>
+        </xpath>
+        <xpath expr="//div[hasclass('o_footer_copyright')]" position="replace">
+            <div class="o_footer_copyright d-none" t-if="False"/>
+        </xpath>
+    </template>
+
+</odoo>

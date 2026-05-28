@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+    <!-- Placeholder pages for header menu URLs (editable in Website → Pages). -->
+
+    <record id="page_about_us" model="website.page">
+        <field name="name">About</field>
+        <field name="url">/about-us</field>
+        <field name="is_published" eval="True"/>
+        <field name="website_id" ref="website.default_website"/>
+        <field name="type">qweb</field>
+        <field name="key">website_landing_faq.page_about_us</field>
+        <field name="arch" type="xml">
+            <t t-name="website_landing_faq.page_about_us">
+                <t t-call="website_landing_faq.content_page"/>
+            </t>
+        </field>
+    </record>
+
+    <record id="page_solar_power" model="website.page">
+        <field name="name">Solar Power</field>
+        <field name="url">/solar-power</field>
+        <field name="is_published" eval="True"/>
+        <field name="website_id" ref="website.default_website"/>
+        <field name="type">qweb</field>
+        <field name="key">website_landing_faq.page_solar_power</field>
+        <field name="arch" type="xml">
+            <t t-name="website_landing_faq.page_solar_power">
+                <t t-call="website_landing_faq.content_page"/>
+            </t>
+        </field>
+    </record>
+
+    <record id="page_solar_savings_calculator" model="website.page">
+        <field name="name">Solar Savings Calculator</field>
+        <field name="url">/solar-savings-calculator</field>
+        <field name="is_published" eval="True"/>
+        <field name="website_id" ref="website.default_website"/>
+        <field name="type">qweb</field>
+        <field name="key">website_landing_faq.page_solar_savings_calculator</field>
+        <field name="arch" type="xml">
+            <t t-name="website_landing_faq.page_solar_savings_calculator">
+                <t t-call="website_landing_faq.solar_savings_calculator_page"/>
+            </t>
+        </field>
+    </record>
+
+    <record id="page_solar_commercial" model="website.page">
+        <field name="name">Commercial</field>
+        <field name="url">/solar-power/commercial</field>
+        <field name="is_published" eval="True"/>
+        <field name="website_id" ref="website.default_website"/>
+        <field name="type">qweb</field>
+        <field name="key">website_landing_faq.page_solar_commercial</field>
+        <field name="arch" type="xml">
+            <t t-name="website_landing_faq.page_solar_commercial">
+                <t t-call="website_landing_faq.content_page"/>
+            </t>
+        </field>
+    </record>
+
+    <record id="page_solar_ppm" model="website.page">
+        <field name="name">Power Purchase Management</field>
+        <field name="url">/solar-power/power-purchase-management</field>
+        <field name="is_published" eval="True"/>
+        <field name="website_id" ref="website.default_website"/>
+        <field name="type">qweb</field>
+        <field name="key">website_landing_faq.page_solar_ppm</field>
+        <field name="arch" type="xml">
+            <t t-name="website_landing_faq.page_solar_ppm">
+                <t t-call="website_landing_faq.content_page"/>
+            </t>
+        </field>
+    </record>
+
+    <record id="page_solar_turnkey" model="website.page">
+        <field name="name">Turnkey Solutions</field>
+        <field name="url">/solar-power/turnkey-solutions</field>
+        <field name="is_published" eval="True"/>
+        <field name="website_id" ref="website.default_website"/>
+        <field name="type">qweb</field>
+        <field name="key">website_landing_faq.page_solar_turnkey</field>
+        <field name="arch" type="xml">
+            <t t-name="website_landing_faq.page_solar_turnkey">
+                <t t-call="website_landing_faq.content_page"/>
+            </t>
+        </field>
+    </record>
+
+    <record id="page_solar_commercial_industrial" model="website.page">
+        <field name="name">Commercial &amp; Industrial Projects</field>
+        <field name="url">/solar-power/commercial-industrial-projects</field>
+        <field name="is_published" eval="True"/>
+        <field name="website_id" ref="website.default_website"/>
+        <field name="type">qweb</field>
+        <field name="key">website_landing_faq.page_solar_commercial_industrial</field>
+        <field name="arch" type="xml">
+            <t t-name="website_landing_faq.page_solar_commercial_industrial">
+                <t t-call="website_landing_faq.content_page"/>
+            </t>
+        </field>
+    </record>
+
+    <record id="page_solar_residential" model="website.page">
+        <field name="name">Residential Projects</field>
+        <field name="url">/solar-power/residential-projects</field>
+        <field name="is_published" eval="True"/>
+        <field name="website_id" ref="website.default_website"/>
+        <field name="type">qweb</field>
+        <field name="key">website_landing_faq.page_solar_residential</field>
+        <field name="arch" type="xml">
+            <t t-name="website_landing_faq.page_solar_residential">
+                <t t-call="website_landing_faq.content_page"/>
+            </t>
+        </field>
+    </record>
+
+    <record id="page_solar_promotions" model="website.page">
+        <field name="name">Latest Promotions</field>
+        <field name="url">/solar-power/latest-promotions</field>
+        <field name="is_published" eval="True"/>
+        <field name="website_id" ref="website.default_website"/>
+        <field name="type">qweb</field>
+        <field name="key">website_landing_faq.page_solar_promotions</field>
+        <field name="arch" type="xml">
+            <t t-name="website_landing_faq.page_solar_promotions">
+                <t t-call="website_landing_faq.content_page"/>
+            </t>
+        </field>
+    </record>
+
+    <record id="page_electricity" model="website.page">
+        <field name="name">Electricity</field>
+        <field name="url">/electricity</field>
+        <field name="is_published" eval="True"/>
+        <field name="website_id" ref="website.default_website"/>
+        <field name="type">qweb</field>
+        <field name="key">website_landing_faq.page_electricity</field>
+        <field name="arch" type="xml">
+            <t t-name="website_landing_faq.page_electricity">
+                <t t-call="website_landing_faq.content_page"/>
+            </t>
+        </field>
+    </record>
+
+    <record id="page_electricity_for_business" model="website.page">
+        <field name="name">Electricity For Business</field>
+        <field name="url">/electricity/for-business</field>
+        <field name="is_published" eval="True"/>
+        <field name="website_id" ref="website.default_website"/>
+        <field name="type">qweb</field>
+        <field name="key">website_landing_faq.page_electricity_for_business</field>
+        <field name="arch" type="xml">
+            <t t-name="website_landing_faq.page_electricity_for_business">
+                <t t-call="website_landing_faq.content_page"/>
+            </t>
+        </field>
+    </record>
+
+    <record id="page_electricity_business_plans" model="website.page">
+        <field name="name">Business Plans</field>
+        <field name="url">/electricity/business-plans</field>
+        <field name="is_published" eval="True"/>
+        <field name="website_id" ref="website.default_website"/>
+        <field name="type">qweb</field>
+        <field name="key">website_landing_faq.page_electricity_business_plans</field>
+        <field name="arch" type="xml">
+            <t t-name="website_landing_faq.page_electricity_business_plans">
+                <t t-call="website_landing_faq.content_page"/>
+            </t>
+        </field>
+    </record>
+
+    <record id="page_ev_charging" model="website.page">
+        <field name="name">EV Charging</field>
+        <field name="url">/ev-charging</field>
+        <field name="is_published" eval="True"/>
+        <field name="website_id" ref="website.default_website"/>
+        <field name="type">qweb</field>
+        <field name="key">website_landing_faq.page_ev_charging</field>
+        <field name="arch" type="xml">
+            <t t-name="website_landing_faq.page_ev_charging">
+                <t t-call="website_landing_faq.content_page"/>
+            </t>
+        </field>
+    </record>
+
+    <record id="page_ev_union_charge_app" model="website.page">
+        <field name="name">Union Charge App</field>
+        <field name="url">/ev-charging/union-charge-app</field>
+        <field name="is_published" eval="True"/>
+        <field name="website_id" ref="website.default_website"/>
+        <field name="type">qweb</field>
+        <field name="key">website_landing_faq.page_ev_union_charge_app</field>
+        <field name="arch" type="xml">
+            <t t-name="website_landing_faq.page_ev_union_charge_app">
+                <t t-call="website_landing_faq.content_page"/>
+            </t>
+        </field>
+    </record>
+
+    <record id="page_ev_for_homes" model="website.page">
+        <field name="name">EVC For Homes</field>
+        <field name="url">/ev-charging/for-homes</field>
+        <field name="is_published" eval="True"/>
+        <field name="website_id" ref="website.default_website"/>
+        <field name="type">qweb</field>
+        <field name="key">website_landing_faq.page_ev_for_homes</field>
+        <field name="arch" type="xml">
+            <t t-name="website_landing_faq.page_ev_for_homes">
+                <t t-call="website_landing_faq.content_page"/>
+            </t>
+        </field>
+    </record>
+
+    <record id="page_ev_for_business" model="website.page">
+        <field name="name">EVC For Business</field>
+        <field name="url">/ev-charging/for-business</field>
+        <field name="is_published" eval="True"/>
+        <field name="website_id" ref="website.default_website"/>
+        <field name="type">qweb</field>
+        <field name="key">website_landing_faq.page_ev_for_business</field>
+        <field name="arch" type="xml">
+            <t t-name="website_landing_faq.page_ev_for_business">
+                <t t-call="website_landing_faq.content_page"/>
+            </t>
+        </field>
+    </record>
+
+    <record id="page_ev_promotion" model="website.page">
+        <field name="name">EVC Promotion</field>
+        <field name="url">/ev-charging/promotion</field>
+        <field name="is_published" eval="True"/>
+        <field name="website_id" ref="website.default_website"/>
+        <field name="type">qweb</field>
+        <field name="key">website_landing_faq.page_ev_promotion</field>
+        <field name="arch" type="xml">
+            <t t-name="website_landing_faq.page_ev_promotion">
+                <t t-call="website_landing_faq.content_page"/>
+            </t>
+        </field>
+    </record>
+
+    <record id="page_corporate" model="website.page">
+        <field name="name">Corporate</field>
+        <field name="url">/corporate</field>
+        <field name="is_published" eval="True"/>
+        <field name="website_id" ref="website.default_website"/>
+        <field name="type">qweb</field>
+        <field name="key">website_landing_faq.page_corporate</field>
+        <field name="arch" type="xml">
+            <t t-name="website_landing_faq.page_corporate">
+                <t t-call="website_landing_faq.content_page"/>
+            </t>
+        </field>
+    </record>
+
+    <record id="page_article" model="website.page">
+        <field name="name">Article</field>
+        <field name="url">/article</field>
+        <field name="is_published" eval="True"/>
+        <field name="website_id" ref="website.default_website"/>
+        <field name="type">qweb</field>
+        <field name="key">website_landing_faq.page_article</field>
+        <field name="arch" type="xml">
+            <t t-name="website_landing_faq.page_article">
+                <t t-call="website_landing_faq.content_page"/>
+            </t>
+        </field>
+    </record>
+
+    <record id="page_contact_us" model="website.page">
+        <field name="name">Contact Us</field>
+        <field name="url">/contact-us</field>
+        <field name="is_published" eval="True"/>
+        <field name="website_id" ref="website.default_website"/>
+        <field name="type">qweb</field>
+        <field name="key">website_landing_faq.page_contact_us</field>
+        <field name="arch" type="xml">
+            <t t-name="website_landing_faq.page_contact_us">
+                <t t-call="website_landing_faq.content_page"/>
+            </t>
+        </field>
+    </record>
+
+</odoo>

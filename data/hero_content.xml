@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="landing_section_hero" model="website.landing.section">
+        <field name="title">We're bringing renewable energy to life.</field>
+        <field name="subtitle">Renewable Energy. It may sound like a lofty dream - but at Union, we're on the ground working hard to make it happen. Not tomorrow, today. Not for some, for everyone.</field>
+        <field name="body_html" eval="False"/>
+        <field name="button_text" eval="False"/>
+        <field name="image" type="base64" file="website_landing_faq/static/src/img/hero-family-park.png"/>
+    </record>
+</odoo>

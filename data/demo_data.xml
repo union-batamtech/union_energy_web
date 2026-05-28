@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+    <!-- Landing sections -->
+    <record id="landing_section_hero" model="website.landing.section">
+        <field name="name">Hero Utama</field>
+        <field name="section_type">hero</field>
+        <field name="sequence">10</field>
+        <field name="title">We're bringing renewable energy to life.</field>
+        <field name="subtitle">Renewable Energy. It may sound like a lofty dream - but at Union, we're on the ground working hard to make it happen. Not tomorrow, today. Not for some, for everyone.</field>
+        <field name="body_html" eval="False"/>
+        <field name="button_text" eval="False"/>
+        <field name="image" type="base64" file="website_landing_faq/static/src/img/hero-family-park.png"/>
+        <field name="website_published" eval="True"/>
+    </record>
+
+    <record id="landing_section_features" model="website.landing.section">
+        <field name="name">Fitur Utama</field>
+        <field name="section_type">features</field>
+        <field name="sequence">20</field>
+        <field name="title">Mengapa Memilih Kami?</field>
+        <field name="subtitle">Tiga alasan utama pelanggan mempercayai layanan kami</field>
+        <field name="body_html"><![CDATA[
+            <div class="row g-4 text-center">
+                <div class="col-md-4">
+                    <div class="p-4 border rounded bg-white h-100">
+                        <h4>⚡ Cepat</h4>
+                        <p class="text-muted mb-0">Implementasi dan dukungan responsif untuk tim Anda.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-4 border rounded bg-white h-100">
+                        <h4>🔒 Aman</h4>
+                        <p class="text-muted mb-0">Data bisnis Anda terlindungi dengan standar keamanan terbaik.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-4 border rounded bg-white h-100">
+                        <h4>📈 Terukur</h4>
+                        <p class="text-muted mb-0">Skalakan layanan seiring pertumbuhan perusahaan Anda.</p>
+                    </div>
+                </div>
+            </div>
+        ]]></field>
+        <field name="website_published" eval="True"/>
+    </record>
+
+    <record id="landing_section_cta" model="website.landing.section">
+        <field name="name">Call to Action</field>
+        <field name="section_type">cta</field>
+        <field name="sequence">30</field>
+        <field name="title">Siap Memulai?</field>
+        <field name="subtitle">Jadwalkan demo gratis dan temukan solusi yang tepat.</field>
+        <field name="button_text">Mulai Sekarang</field>
+        <field name="button_url">/contactus</field>
+        <field name="website_published" eval="True"/>
+    </record>
+
+    <!-- FAQ categories -->
+    <record id="faq_category_general" model="website.faq.category">
+        <field name="name">Umum</field>
+        <field name="sequence">10</field>
+    </record>
+
+    <record id="faq_category_billing" model="website.faq.category">
+        <field name="name">Pembayaran</field>
+        <field name="sequence">20</field>
+    </record>
+
+    <!-- FAQ items -->
+    <record id="faq_item_1" model="website.faq.item">
+        <field name="question">Apa itu layanan ini?</field>
+        <field name="category_id" ref="faq_category_general"/>
+        <field name="sequence">10</field>
+        <field name="answer_html"><![CDATA[
+            <p>Layanan kami adalah platform terintegrasi untuk mengelola operasi bisnis Anda secara efisien, mulai dari penjualan hingga layanan pelanggan.</p>
+        ]]></field>
+        <field name="website_published" eval="True"/>
+    </record>
+
+    <record id="faq_item_2" model="website.faq.item">
+        <field name="question">Bagaimana cara memulai?</field>
+        <field name="category_id" ref="faq_category_general"/>
+        <field name="sequence">20</field>
+        <field name="answer_html"><![CDATA[
+            <p>Hubungi tim kami melalui halaman kontak atau klik tombol <strong>Hubungi Kami</strong> di landing page. Tim kami akan membantu proses onboarding.</p>
+        ]]></field>
+        <field name="website_published" eval="True"/>
+    </record>
+
+    <record id="faq_item_3" model="website.faq.item">
+        <field name="question">Metode pembayaran apa yang diterima?</field>
+        <field name="category_id" ref="faq_category_billing"/>
+        <field name="sequence">10</field>
+        <field name="answer_html"><![CDATA[
+            <p>Kami menerima transfer bank, kartu kredit, dan invoice perusahaan untuk pelanggan enterprise.</p>
+        ]]></field>
+        <field name="website_published" eval="True"/>
+    </record>
+
+    <record id="faq_item_4" model="website.faq.item">
+        <field name="question">Apakah ada uji coba gratis?</field>
+        <field name="category_id" ref="faq_category_billing"/>
+        <field name="sequence">20</field>
+        <field name="answer_html"><![CDATA[
+            <p>Ya, tersedia periode uji coba. Hubungi sales untuk detail paket dan durasi trial.</p>
+        ]]></field>
+        <field name="website_published" eval="True"/>
+    </record>
+
+</odoo>

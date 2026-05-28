@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ==================== LANDING PAGE ==================== -->
+    <template id="landing_page" name="Landing Page">
+        <t t-call="website.layout">
+            <t t-set="has_hero" t-value="sections and sections[0].section_type == 'hero'"/>
+            <t t-set="body_classname" t-value="'o_wlf_home_hero' if has_hero else ''"/>
+            <div id="wrap" class="oe_structure o_wlf_landing">
+
+                <t t-if="not sections">
+                    <section class="s_text_block pt64 pb64">
+                        <div class="container text-center">
+                            <h1>Landing Page</h1>
+                            <p class="lead text-muted">
+                                Belum ada section. Tambahkan konten dari menu
+                                <strong>Website → Landing &amp; FAQ → Landing Page</strong>.
+                            </p>
+                        </div>
+                    </section>
+                </t>
+
+                <t t-foreach="sections" t-as="section">
+                    <!-- Hero (Union-style full-bleed + yellow blob) -->
+                    <t t-if="section.section_type == 'hero'">
+                        <section class="o_wlf_hero" data-snippet="s_cover"
+                            t-att-style="section.image and ('background-image: url(/web/image/website.landing.section/%s/image);' % section.id) or 'background-image: url(/website_landing_faq/static/src/img/hero-family-park.png);'">
+                            <div class="o_wlf_hero__content">
+                                <div class="o_wlf_hero__blob">
+                                    <h1 class="o_wlf_hero__title" t-field="section.title"/>
+                                    <p t-if="section.subtitle" class="o_wlf_hero__lead" t-field="section.subtitle"/>
+                                    <div t-if="section.body_html" class="o_wlf_hero__body" t-field="section.body_html"/>
+                                    <a t-if="section.button_text"
+                                        t-att-href="section.button_url or '#'"
+                                        class="btn btn-dark btn-lg mt-4 o_wlf_hero__cta">
+                                        <t t-esc="section.button_text"/>
+                                    </a>
+                                </div>
+                            </div>
+                        </section>
+                    </t>
+
+                    <!-- Features -->
+                    <t t-if="section.section_type == 'features'">
+                        <section class="s_features pt64 pb64 bg-light">
+                            <div class="container">
+                                <div class="text-center mb-5">
+                                    <h2 t-field="section.title"/>
+                                    <p class="text-muted" t-field="section.subtitle"/>
+                                </div>
+                                <div t-field="section.body_html"/>
+                            </div>
+                        </section>
+                    </t>
+
+                    <!-- Testimonial -->
+                    <t t-if="section.section_type == 'testimonial'">
+                        <section class="s_quotes_carousel pt64 pb64">
+                            <div class="container">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-8 text-center">
+                                        <blockquote class="blockquote">
+                                            <p class="fs-4 fst-italic" t-field="section.body_html"/>
+                                            <footer class="blockquote-footer mt-3">
+                                                <cite t-field="section.title"/>
+                                                <span t-if="section.subtitle"> — <t t-esc="section.subtitle"/></span>
+                                            </footer>
+                                        </blockquote>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </t>
+
+                    <!-- CTA -->
+                    <t t-if="section.section_type == 'cta'">
+                        <section class="s_call_to_action pt64 pb64 o_wlf_cta">
+                            <div class="container text-center">
+                                <h2 t-field="section.title"/>
+                                <p class="lead mt-3" t-field="section.subtitle"/>
+                                <div class="mt-3" t-if="section.body_html" t-field="section.body_html"/>
+                                <a t-if="section.button_text"
+                                    t-att-href="section.button_url or '#'"
+                                    class="btn btn-light btn-lg mt-4">
+                                    <t t-esc="section.button_text"/>
+                                </a>
+                            </div>
+                        </section>
+                    </t>
+
+                    <!-- Custom -->
+                    <t t-if="section.section_type == 'custom'">
+                        <section class="s_text_block pt48 pb48">
+                            <div class="container">
+                                <h2 t-if="section.title" t-field="section.title"/>
+                                <p t-if="section.subtitle" class="text-muted" t-field="section.subtitle"/>
+                                <div t-if="section.body_html" t-field="section.body_html"/>
+                                <a t-if="section.button_text"
+                                    t-att-href="section.button_url or '#'"
+                                    class="btn btn-outline-primary mt-3">
+                                    <t t-esc="section.button_text"/>
+                                </a>
+                            </div>
+                        </section>
+                    </t>
+                </t>
+
+            </div>
+        </t>
+    </template>
+
+    <!-- ==================== FAQ PAGE ==================== -->
+    <template id="faq_page" name="FAQ Page">
+        <t t-call="website.layout">
+            <div id="wrap" class="oe_structure o_wlf_faq">
+
+                <section class="s_title pt64 pb32">
+                    <div class="container text-center">
+                        <h1>Pertanyaan yang Sering Diajukan</h1>
+                        <p class="lead text-muted">
+                            Temukan jawaban untuk pertanyaan umum seputar layanan kami.
+                        </p>
+                    </div>
+                </section>
+
+                <section class="pb64">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+
+                                <t t-if="not faq_items">
+                                    <div class="alert alert-info text-center">
+                                        Belum ada FAQ. Tambahkan dari menu
+                                        <strong>Website → Landing &amp; FAQ → FAQ</strong>.
+                                    </div>
+                                </t>
+
+                                <!-- FAQ per kategori -->
+                                <t t-foreach="categories" t-as="category">
+                                    <t t-set="category_items" t-value="faq_items.filtered(lambda i: i.category_id == category)"/>
+                                    <t t-if="category_items">
+                                        <h3 class="o_wlf_faq_category mb-3 mt-4" t-esc="category.name"/>
+                                        <div class="accordion" t-att-id="'faq_accordion_%s' % category.id">
+                                            <t t-foreach="category_items" t-as="item">
+                                                <div class="accordion-item">
+                                                    <h2 class="accordion-header">
+                                                        <button class="accordion-button collapsed"
+                                                            type="button"
+                                                            data-bs-toggle="collapse"
+                                                            t-att-data-bs-target="'#faq_%s' % item.id"
+                                                            t-att-aria-controls="'faq_%s' % item.id">
+                                                            <t t-esc="item.question"/>
+                                                        </button>
+                                                    </h2>
+                                                    <div t-att-id="'faq_%s' % item.id"
+                                                        class="accordion-collapse collapse"
+                                                        t-att-data-bs-parent="'#faq_accordion_%s' % category.id">
+                                                        <div class="accordion-body">
+                                                            <div t-field="item.answer_html"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </t>
+                                        </div>
+                                    </t>
+                                </t>
+
+                                <!-- FAQ tanpa kategori -->
+                                <t t-set="uncategorized_items" t-value="faq_items.filtered(lambda i: not i.category_id)"/>
+                                <t t-if="uncategorized_items">
+                                    <h3 class="o_wlf_faq_category mb-3 mt-4">Lainnya</h3>
+                                    <div class="accordion" id="faq_accordion_other">
+                                        <t t-foreach="uncategorized_items" t-as="item">
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header">
+                                                    <button class="accordion-button collapsed"
+                                                        type="button"
+                                                        data-bs-toggle="collapse"
+                                                        t-att-data-bs-target="'#faq_%s' % item.id"
+                                                        t-att-aria-controls="'faq_%s' % item.id">
+                                                        <t t-esc="item.question"/>
+                                                    </button>
+                                                </h2>
+                                                <div t-att-id="'faq_%s' % item.id"
+                                                    class="accordion-collapse collapse"
+                                                    data-bs-parent="#faq_accordion_other">
+                                                    <div class="accordion-body">
+                                                        <div t-field="item.answer_html"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </t>
+                                    </div>
+                                </t>
+
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </t>
+    </template>
+
+    <!-- ==================== CONTENT PAGES (website.page) ==================== -->
+    <template id="content_page" name="Content Page">
+        <t t-call="website.layout">
+            <div id="wrap" class="oe_structure o_wlf_content_page">
+                <section class="s_title pt64 pb64">
+                    <div class="container">
+                        <h1 t-esc="main_object.name"/>
+                    </div>
+                </section>
+            </div>
+        </t>
+    </template>
+
+    <!-- Blank shell for Solar Savings Calculator (override from another module). -->
+    <template id="solar_savings_calculator_page" name="Solar Savings Calculator">
+        <t t-call="website.layout">
+            <div id="wrap" class="oe_structure o_wlf_solar_savings_calculator"/>
+        </t>
+    </template>
+
+</odoo>

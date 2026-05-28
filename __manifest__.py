@@ -1,28 +1,42 @@
-# -*- coding: utf-8 -*-
-
 {
-    'name': 'Union Energy Website',
-    'summary': 'Union Energy Website',
-    'category': 'Union Energy',
-    'author': 'BatamTech',
-    'sequence': 10,
-    'version': '1.1',
-    'description': "This module allows to publish the Union Energy website.",
+    'name': 'Website Landing Page & FAQ',
+    'version': '19.0.1.2.3',
+    'category': 'Website/Website',
+    'summary': 'Halaman landing page dan FAQ yang dapat dikelola dari backend',
+    'description': """
+Website Landing Page & FAQ
+==========================
+Modul ini memungkinkan Anda membuat dan mengelola:
+
+* **Landing Page** — section dinamis (hero, fitur, testimoni, CTA)
+* **FAQ** — pertanyaan & jawaban dikelompokkan per kategori
+
+Konten dikelola dari menu Website di backend Odoo.
+Halaman publik: ``/`` (landing), ``/faq``, dan halaman menu via ``website.page``.
+    """,
+    'author': 'Aji',
+    'website': 'https://www.example.com',
+    'license': 'LGPL-3',
     'depends': ['website'],
     'data': [
         'security/ir.model.access.csv',
-        'views/faq_view.xml',
+        'views/landing_section_views.xml',
+        'views/faq_views.xml',
+        'views/menu.xml',
+        'views/footer.xml',
+        'data/footer_config.xml',
+        'views/templates.xml',
+        'data/website_menu.xml',
+        'data/website_pages.xml',
+        'data/demo_data.xml',
+        'data/hero_content.xml',
     ],
-    'demo': [
-        
-    ],
-    'installable': True,
-    'application': True,
-    'auto_install': ['website'],
     'assets': {
         'web.assets_frontend': [
-            'union_energy_web/static/src/css/*',
-            'union_energy_web/static/src/js/*',
+            'website_landing_faq/static/src/scss/website_landing_faq.scss',
         ],
     },
+    'installable': True,
+    'application': False,
+    'auto_install': False,
 }

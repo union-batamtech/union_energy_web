@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="menu_website_landing_faq_root"
+        name="Landing &amp; FAQ"
+        parent="website.menu_website_configuration"
+        sequence="45"/>
+
+    <menuitem id="menu_website_landing_section"
+        name="Landing Page"
+        parent="menu_website_landing_faq_root"
+        action="action_website_landing_section"
+        sequence="10"/>
+
+    <menuitem id="menu_website_faq_item"
+        name="FAQ"
+        parent="menu_website_landing_faq_root"
+        action="action_website_faq_item"
+        sequence="20"/>
+
+    <menuitem id="menu_website_faq_category"
+        name="Kategori FAQ"
+        parent="menu_website_landing_faq_root"
+        action="action_website_faq_category"
+        sequence="30"/>
+
+</odoo>

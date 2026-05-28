@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- FAQ Category -->
+    <record id="view_website_faq_category_list" model="ir.ui.view">
+        <field name="name">website.faq.category.list</field>
+        <field name="model">website.faq.category</field>
+        <field name="arch" type="xml">
+            <list string="Kategori FAQ" editable="bottom">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="item_count"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_website_faq_category_form" model="ir.ui.view">
+        <field name="name">website.faq.category.form</field>
+        <field name="model">website.faq.category</field>
+        <field name="arch" type="xml">
+            <form string="Kategori FAQ">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="sequence"/>
+                    </group>
+                    <notebook>
+                        <page string="Pertanyaan" name="items">
+                            <field name="item_ids">
+                                <list>
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="question"/>
+                                    <field name="website_published"/>
+                                </list>
+                                <form string="FAQ">
+                                    <group>
+                                        <field name="question"/>
+                                        <field name="sequence"/>
+                                        <field name="website_published"/>
+                                    </group>
+                                    <label for="answer_html" string="Jawaban"/>
+                                    <field name="answer_html" widget="html" nolabel="1"/>
+                                </form>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_website_faq_category" model="ir.actions.act_window">
+        <field name="name">Kategori FAQ</field>
+        <field name="res_model">website.faq.category</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <!-- FAQ Item -->
+    <record id="view_website_faq_item_list" model="ir.ui.view">
+        <field name="name">website.faq.item.list</field>
+        <field name="model">website.faq.item</field>
+        <field name="arch" type="xml">
+            <list string="FAQ">
+                <field name="sequence" widget="handle"/>
+                <field name="question"/>
+                <field name="category_id"/>
+                <field name="website_published"/>
+                <field name="active" column_invisible="True"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_website_faq_item_form" model="ir.ui.view">
+        <field name="name">website.faq.item.form</field>
+        <field name="model">website.faq.item</field>
+        <field name="arch" type="xml">
+            <form string="FAQ">
+                <sheet>
+                    <widget name="web_ribbon" title="Tidak dipublikasikan" bg_color="text-bg-danger" invisible="website_published"/>
+                    <group>
+                        <field name="question"/>
+                        <field name="category_id"/>
+                        <field name="sequence"/>
+                        <field name="website_published"/>
+                        <field name="active"/>
+                    </group>
+                    <label for="answer_html" string="Jawaban"/>
+                    <field name="answer_html" widget="html" required="website_published" nolabel="1"/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_website_faq_item" model="ir.actions.act_window">
+        <field name="name">Pertanyaan FAQ</field>
+        <field name="res_model">website.faq.item</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Tambahkan pertanyaan yang sering diajukan
+            </p>
+            <p>
+                Halaman publik FAQ tersedia di <strong>/faq</strong>.
+            </p>
+        </field>
+    </record>
+
+</odoo>
