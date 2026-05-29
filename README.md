@@ -7,10 +7,11 @@ Modul Odoo 19 untuk mengelola **Landing Page** dan **FAQ** melalui aplikasi Webs
 1. Pastikan container Odoo berjalan:
 
 ```bash
-docker compose up -d
+# From repo root (Union Energy/)
+docker compose -f docker.yaml up -d
 ```
 
-2. Buka Odoo: http://localhost:8069
+2. Buka Odoo: http://localhost:10019
 3. Aktifkan **Developer Mode** (Settings → Activate Developer Mode)
 4. Apps → Update Apps List
 5. Cari **"Website Landing Page & FAQ"** → Install
@@ -56,7 +57,7 @@ Centang **Dipublikasikan** agar section/FAQ tampil di website.
 Setelah mengubah kode modul:
 
 ```bash
-docker compose restart odoo
+docker compose -f docker.yaml restart odoo
 ```
 
 Lalu di Odoo: Apps → modul → Upgrade.

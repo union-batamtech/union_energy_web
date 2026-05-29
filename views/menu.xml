@@ -12,6 +12,12 @@
         action="action_website_landing_section"
         sequence="10"/>
 
+    <menuitem id="menu_website_service_card"
+        name="Service Cards"
+        parent="menu_website_landing_faq_root"
+        action="action_website_service_card"
+        sequence="15"/>
+
     <menuitem id="menu_website_faq_item"
         name="FAQ"
         parent="menu_website_landing_faq_root"

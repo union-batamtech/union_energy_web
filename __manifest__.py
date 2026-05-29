@@ -1,6 +1,6 @@
 {
     'name': 'Website Landing Page & FAQ',
-    'version': '19.0.1.2.3',
+    'version': '19.0.1.3.0',
     'category': 'Website/Website',
     'summary': 'Halaman landing page dan FAQ yang dapat dikelola dari backend',
     'description': """
@@ -21,6 +21,8 @@ Halaman publik: ``/`` (landing), ``/faq``, dan halaman menu via ``website.page``
     'data': [
         'security/ir.model.access.csv',
         'views/landing_section_views.xml',
+        'views/service_card_views.xml',
+        'views/services_section.xml',
         'views/faq_views.xml',
         'views/menu.xml',
         'views/footer.xml',
@@ -29,6 +31,7 @@ Halaman publik: ``/`` (landing), ``/faq``, dan halaman menu via ``website.page``
         'data/website_menu.xml',
         'data/website_pages.xml',
         'data/demo_data.xml',
+        'data/services_content.xml',
         'data/hero_content.xml',
     ],
     'assets': {

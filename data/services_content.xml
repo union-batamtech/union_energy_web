@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+    <record id="landing_section_services" model="website.landing.section">
+        <field name="name">Commercial &amp; Residential Services</field>
+        <field name="section_type">services</field>
+        <field name="sequence">20</field>
+        <field name="title">We're making it easier for homes and business to make the switch.</field>
+        <field name="subtitle">At Union, you'll find energy solutions tailored to the specific needs of residential and commercial customers. So whether at home or your place of business, it's easy to start benefiting from green energy sources and embracing a renewable way of life.</field>
+        <field name="website_published" eval="True"/>
+    </record>
+
+    <!-- Commercial -->
+    <record id="service_card_commercial_solar" model="website.service.card">
+        <field name="name">Solar Power</field>
+        <field name="audience">commercial</field>
+        <field name="service_type">solar</field>
+        <field name="sequence">10</field>
+        <field name="link_url">/solar-power/commercial</field>
+        <field name="website_published" eval="True"/>
+    </record>
+
+    <record id="service_card_commercial_electricity" model="website.service.card">
+        <field name="name">Electricity</field>
+        <field name="audience">commercial</field>
+        <field name="service_type">electricity</field>
+        <field name="sequence">20</field>
+        <field name="link_url">/electricity/for-business</field>
+        <field name="website_published" eval="True"/>
+    </record>
+
+    <record id="service_card_commercial_ev" model="website.service.card">
+        <field name="name">EV Charging</field>
+        <field name="audience">commercial</field>
+        <field name="service_type">ev_charging</field>
+        <field name="sequence">30</field>
+        <field name="link_url">/ev-charging/for-business</field>
+        <field name="website_published" eval="True"/>
+    </record>
+
+    <!-- Residential -->
+    <record id="service_card_residential_solar" model="website.service.card">
+        <field name="name">Solar Power</field>
+        <field name="audience">residential</field>
+        <field name="service_type">solar</field>
+        <field name="sequence">10</field>
+        <field name="link_url">/solar-power/residential-projects</field>
+        <field name="website_published" eval="True"/>
+    </record>
+
+    <record id="service_card_residential_electricity" model="website.service.card">
+        <field name="name">Electricity</field>
+        <field name="audience">residential</field>
+        <field name="service_type">electricity</field>
+        <field name="sequence">20</field>
+        <field name="link_url">/electricity</field>
+        <field name="website_published" eval="True"/>
+    </record>
+
+    <record id="service_card_residential_ev" model="website.service.card">
+        <field name="name">EV Charging</field>
+        <field name="audience">residential</field>
+        <field name="service_type">ev_charging</field>
+        <field name="sequence">30</field>
+        <field name="link_url">/ev-charging/for-homes</field>
+        <field name="website_published" eval="True"/>
+    </record>
+
+</odoo>

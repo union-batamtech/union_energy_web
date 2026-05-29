@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="service_card_sun_icon" name="Service Card Sun Icon">
+        <svg class="o_wlf_services__icon" xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 48 48" width="48" height="48" aria-hidden="true" focusable="false">
+            <circle cx="24" cy="24" r="10" fill="currentColor"/>
+            <g stroke="currentColor" stroke-width="3" stroke-linecap="round">
+                <line x1="24" y1="4" x2="24" y2="10"/>
+                <line x1="24" y1="38" x2="24" y2="44"/>
+                <line x1="4" y1="24" x2="10" y2="24"/>
+                <line x1="38" y1="24" x2="44" y2="24"/>
+                <line x1="9.9" y1="9.9" x2="14.1" y2="14.1"/>
+                <line x1="33.9" y1="33.9" x2="38.1" y2="38.1"/>
+                <line x1="9.9" y1="38.1" x2="14.1" y2="33.9"/>
+                <line x1="33.9" y1="14.1" x2="38.1" y2="9.9"/>
+            </g>
+        </svg>
+    </template>
+
+    <template id="service_cards_grid" name="Service Cards Grid">
+        <div class="row g-4 g-lg-5 justify-content-center o_wlf_services__grid">
+            <t t-if="not cards">
+                <div class="col-12 text-center text-muted">
+                    <p>No service cards published for this audience yet.</p>
+                </div>
+            </t>
+            <t t-foreach="cards" t-as="card">
+                <div class="col-md-6 col-lg-4">
+                    <a t-att-href="card.link_url or '#'"
+                        class="o_wlf_services__card text-decoration-none">
+                        <div class="o_wlf_services__card-media">
+                            <img t-if="card.image"
+                                t-att-src="'/web/image/website.service.card/%s/image' % card.id"
+                                t-att-alt="card.name"
+                                loading="lazy"
+                                class="o_wlf_services__card-img"/>
+                            <div t-else="" class="o_wlf_services__card-img o_wlf_services__card-img--placeholder"
+                                t-att-data-service="card.service_type"/>
+                        </div>
+                        <div class="o_wlf_services__card-body">
+                            <t t-call="website_landing_faq.service_card_sun_icon"/>
+                            <h3 class="o_wlf_services__card-title" t-esc="card.name"/>
+                        </div>
+                    </a>
+                </div>
+            </t>
+        </div>
+    </template>
+
+    <template id="services_section" name="Commercial / Residential Services">
+        <section class="o_wlf_services pt64 pb64">
+            <div class="container">
+                <header class="o_wlf_services__header text-center">
+                    <h2 class="o_wlf_services__title" t-esc="section.title"/>
+                    <p t-if="section.subtitle" class="o_wlf_services__lead" t-esc="section.subtitle"/>
+                </header>
+
+                <div class="o_wlf_services__tabs">
+                    <input type="radio" name="o_wlf_services_audience" id="o_wlf_services_commercial"
+                        class="o_wlf_services__tab-input" checked="checked"/>
+                    <input type="radio" name="o_wlf_services_audience" id="o_wlf_services_residential"
+                        class="o_wlf_services__tab-input"/>
+
+                    <div class="o_wlf_services__tab-labels" role="tablist" aria-label="Audience">
+                        <label for="o_wlf_services_commercial" class="o_wlf_services__tab-label" role="tab">
+                            Commercial
+                        </label>
+                        <label for="o_wlf_services_residential" class="o_wlf_services__tab-label" role="tab">
+                            Residential
+                        </label>
+                    </div>
+
+                    <div class="o_wlf_services__panels">
+                        <div class="o_wlf_services__panel o_wlf_services__panel--commercial" role="tabpanel">
+                            <t t-set="cards" t-value="commercial_cards"/>
+                            <t t-call="website_landing_faq.service_cards_grid"/>
+                        </div>
+                        <div class="o_wlf_services__panel o_wlf_services__panel--residential" role="tabpanel">
+                            <t t-set="cards" t-value="residential_cards"/>
+                            <t t-call="website_landing_faq.service_cards_grid"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+
+</odoo>

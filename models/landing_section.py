@@ -13,6 +13,7 @@ class WebsiteLandingSection(models.Model):
             ('features', 'Fitur'),
             ('testimonial', 'Testimoni'),
             ('cta', 'Call to Action'),
+            ('services', 'Commercial / Residential'),
             ('custom', 'Kustom'),
         ],
         string='Tipe Section',

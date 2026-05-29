@@ -40,6 +40,11 @@
                         </section>
                     </t>
 
+                    <!-- Commercial / Residential services -->
+                    <t t-if="section.section_type == 'services'">
+                        <t t-call="website_landing_faq.services_section"/>
+                    </t>
+
                     <!-- Features -->
                     <t t-if="section.section_type == 'features'">
                         <section class="s_features pt64 pb64 bg-light">

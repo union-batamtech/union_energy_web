@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_website_service_card_list" model="ir.ui.view">
+        <field name="name">website.service.card.list</field>
+        <field name="model">website.service.card</field>
+        <field name="arch" type="xml">
+            <list string="Service Cards" editable="bottom">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="audience"/>
+                <field name="service_type"/>
+                <field name="link_url"/>
+                <field name="website_published"/>
+                <field name="active" column_invisible="True"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_website_service_card_form" model="ir.ui.view">
+        <field name="name">website.service.card.form</field>
+        <field name="model">website.service.card</field>
+        <field name="arch" type="xml">
+            <form string="Service Card">
+                <sheet>
+                    <widget name="web_ribbon" title="Tidak dipublikasikan"
+                        bg_color="text-bg-danger" invisible="website_published"/>
+                    <field name="image" widget="image" class="oe_avatar"/>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="audience"/>
+                            <field name="service_type"/>
+                            <field name="sequence"/>
+                        </group>
+                        <group>
+                            <field name="link_url"/>
+                            <field name="website_published"/>
+                            <field name="active"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_website_service_card" model="ir.actions.act_window">
+        <field name="name">Service Cards</field>
+        <field name="res_model">website.service.card</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Tambahkan kartu layanan untuk section Commercial / Residential
+            </p>
+            <p>
+                Setiap audience (Commercial, Residential) memiliki tiga kategori:
+                Solar Power, Electricity, dan EV Charging.
+            </p>
+        </field>
+    </record>
+
+</odoo>

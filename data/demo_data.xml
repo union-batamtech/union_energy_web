@@ -17,7 +17,8 @@
     <record id="landing_section_features" model="website.landing.section">
         <field name="name">Fitur Utama</field>
         <field name="section_type">features</field>
-        <field name="sequence">20</field>
+        <field name="sequence">25</field>
+        <field name="website_published" eval="False"/>
         <field name="title">Mengapa Memilih Kami?</field>
         <field name="subtitle">Tiga alasan utama pelanggan mempercayai layanan kami</field>
         <field name="body_html"><![CDATA[
@@ -42,7 +43,6 @@
                 </div>
             </div>
         ]]></field>
-        <field name="website_published" eval="True"/>
     </record>
 
     <record id="landing_section_cta" model="website.landing.section">
